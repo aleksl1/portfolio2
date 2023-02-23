@@ -1,4 +1,5 @@
-import { FunctionComponent } from "react";
+import { CardContext } from "@/store/CardContext";
+import { FunctionComponent, useContext } from "react";
 import styles from "../../styles/pages/About.module.css";
 
 interface AboutPageProps {}
@@ -19,6 +20,8 @@ const tech = [
 ];
 
 const AboutPage: FunctionComponent<AboutPageProps> = () => {
+  const context = useContext(CardContext);
+  console.log(context);
   const intro = (
     <div className={styles["introduction"]}>
       <h1>Hi, my name is Aleks.</h1>
@@ -27,7 +30,7 @@ const AboutPage: FunctionComponent<AboutPageProps> = () => {
   );
   const techList = (
     <div className={styles["technology"]}>
-      <h2>Main technologies i know:</h2>
+      <h2>Main tools i use:</h2>
       <div className={styles["technology-list"]}>
         <ul>
           {tech.map((item, index) => (
