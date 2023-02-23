@@ -1,0 +1,154 @@
+
+.container {
+  width: 40vw;
+  min-width: 400px;
+  height: 25vw;
+  min-height: 250px;
+  background-color: rgba(63, 63, 136, 1);
+  border-radius: 25px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  top: 40%;
+  left: 0;
+  transform: translate(-10%,-50%);
+  transition: transform 1s;
+}
+.container > * {
+  text-shadow: 0 0 .1rem var(--shadow-color-text);
+}
+.container-hidden {
+  transform: translate(-88%,-50%);
+}
+@media (max-width: 500px) {
+  .container {
+    top: 10px;
+    left: 0;
+    transform: translate(-10%,0);
+    transition: transform 1s;
+  }
+  .container-hidden {
+    transform: translate(-88%,-70%);
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    top: 50%;
+  }
+}
+
+.lineContainer {
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.bar {
+  width: 80%;
+  height: 5px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.progress {
+  position: absolute;
+  left: 10%;
+  background-color: brown;
+  width: 0px;
+  /* animation: progress-bar infinite; */
+  animation-duration: 12s;
+  animation-delay: 4s;
+}
+@keyframes progress-bar {
+  0% {
+    width: 0;
+  }
+  33% {
+    width: calc(400px * 0.8 * 0.33);
+  }
+  66% {
+    width: calc(400px * 0.8 * 0.66);
+  }
+  100% {
+    width: calc(400px * 0.8);
+  }
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  background-color: blue;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.dot.active {
+  background-color: brown;
+  width: 15px;
+  height: 15px;
+}
+
+.navbar-container {
+  margin-inline-start: 15%;
+}
+.menu-control {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: var(--font-color-light);
+  width: 30px;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-evenly;
+  justify-content: center; 
+  transition: 1s opacity;
+}
+@media (min-width: 500px) {
+  .menu-control {
+    display: none;
+  }
+}
+
+ .burger-hidden, .close-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+ .burger-visible, .close-visible {
+  opacity: 1;
+  visibility: visible;
+}
+.burger-line-1,.burger-line-2,.burger-line-3 {
+  height: 3px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.menu-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  border: solid 1px white;
+  border-radius: 50%;
+  z-index: 5;
+  transition:opacity 1s;
+}
+.menu-close div {
+  position: absolute; top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%) skewX(45deg) rotate(90deg);
+  width: 15px;
+  height: 3px;
+  background-color: white;
+}
+.menu-close div:nth-child(1) {
+  transform: translate(-50%,-50%) skewX(45deg) rotate(90deg);
+}
+.menu-close div:nth-child(2) {
+  transform: translate(-50%,-50%) skewX(-45deg) rotate(-90deg);
+}

@@ -1,0 +1,14 @@
+:root {
+  --font-size-heading:calc(30px + 1.790625vw);
+  --font-size-xlarge:calc(25px + 0.390625vw);
+  --font-size-large: calc(18px + 0.390625vw);
+  --font-size-medium: calc(13px + 0.390625vw);
+  --font-size-small: calc(10px + 0.390625vw);
+  --icon-size-medium:calc(30px + 0.390625vw);
+  --icon-size-large:calc(35px + 0.390625vw);
+  --icon-size-xlarge:calc(40px + 0.390625vw);
+  --font-color-dark: rgb(0, 0, 0);
+  --font-color-light: white;
+  --shadow-color-primary: blue;
+  --shadow-color-text: red;
+}
