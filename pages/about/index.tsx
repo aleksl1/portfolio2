@@ -1,6 +1,6 @@
-import { CardContext } from "@/store/CardContext";
-import { FunctionComponent, useContext } from "react";
 import styles from "../../styles/pages/About.module.css";
+import { CardContext } from "@/store/CardContext";
+import { FunctionComponent, useContext, useEffect } from "react";
 
 interface AboutPageProps {}
 
@@ -20,8 +20,7 @@ const tech = [
 ];
 
 const AboutPage: FunctionComponent<AboutPageProps> = () => {
-  const context = useContext(CardContext);
-  console.log(context);
+  const { cardState } = useContext(CardContext);
   const intro = (
     <div className={styles["introduction"]}>
       <h1>Hi, my name is Aleks.</h1>
@@ -58,19 +57,22 @@ const AboutPage: FunctionComponent<AboutPageProps> = () => {
   const hobbyInfo = (
     <div className={styles["hobby"]}>
       <h2>My other interests:</h2>
-      <p>
-        <ul>
-          <li>chess</li>
-          <li>biking</li>
-          <li>food & diet</li>
-          <li>skiing</li>
-        </ul>
-      </p>
+
+      <ul>
+        <li>chess</li>
+        <li>biking</li>
+        <li>food & diet</li>
+        <li>skiing</li>
+      </ul>
     </div>
   );
 
   return (
-    <div className={styles["container"]}>
+    <div
+      className={`${styles["container"]} ${
+        cardState ? styles["card-hidden"] : styles["card-visible"]
+      }`}
+    >
       {intro}
       {techInfo}
       {techList}

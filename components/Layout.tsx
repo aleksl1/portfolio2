@@ -1,3 +1,5 @@
+import { CardContext } from "@/store/CardContext";
+import { useState } from "react";
 import Footer from "./Footer";
 import { NavCard } from "./NavCard/NavCard";
 
@@ -6,11 +8,16 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const [cardHidden, setCardHidden] = useState(false);
+  const handleCardAction = (value: boolean) => setCardHidden(value);
+
   return (
-    <>
-      <NavCard />
+    <CardContext.Provider
+      value={{ cardState: cardHidden, setCardState: () => setCardHidden }}
+    >
+      <NavCard handleCardAction={handleCardAction} />
       <main>{children}</main>
       <Footer />
-    </>
+    </CardContext.Provider>
   );
 }
