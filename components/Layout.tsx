@@ -15,9 +15,11 @@ export default function Layout({ children }: LayoutProps) {
     <CardContext.Provider
       value={{ cardState: cardHidden, setCardState: () => setCardHidden }}
     >
-      <NavCard handleCardAction={handleCardAction} />
-      <main>{children}</main>
-      <Footer />
+      <main>
+        <NavCard handleCardAction={handleCardAction} />
+        {children}
+        <Footer />
+      </main>
     </CardContext.Provider>
   );
 }

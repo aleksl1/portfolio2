@@ -31,9 +31,14 @@
     transform: translate(-88%,-70%);
   }
 }
+@media (min-width: 500px) {
+  .container {
+    top: 25%;
+  }
+}
 @media (min-width: 1200px) {
   .container {
-    top: 50%;
+    top: 40%;
   }
 }
 
@@ -57,7 +62,6 @@
   left: 10%;
   background-color: brown;
   width: 0px;
-  /* animation: progress-bar infinite; */
   animation-duration: 12s;
   animation-delay: 4s;
 }
