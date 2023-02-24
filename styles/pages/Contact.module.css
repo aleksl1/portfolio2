@@ -1,11 +1,4 @@
 
-.contact-container {
-padding-top: 30vh;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-}
 .contact-link {
   text-decoration: none;
 }
@@ -15,6 +8,13 @@ align-items: center;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-content: flex-start;
+  min-height: 95vh;
+  }
+  @media (min-width: 500px) {
+    .contact-container {
+      padding-top: 40vh;
+      }
   }
   @media (min-width: 600px) {
     .contact-container {
@@ -23,6 +23,9 @@ align-items: center;
       }
   }
   @media (min-width: 800px) {
+    .contact-container {
+      padding-top: 30vh;
+      }
     .page-container {
       display: flex;
       justify-content: flex-end;

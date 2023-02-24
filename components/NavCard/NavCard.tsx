@@ -7,9 +7,13 @@ import styles from "../../styles/Navcard.module.css";
 import Navbar from "../Navbar";
 import { useRouter } from "next/router";
 
-interface NavCardProps {}
+interface NavCardProps {
+  handleCardAction: (value: boolean) => void;
+}
 
-export const NavCard: FunctionComponent<NavCardProps> = () => {
+export const NavCard: FunctionComponent<NavCardProps> = ({
+  handleCardAction,
+}) => {
   const [activePage, setActivePage] = useState<string>("/");
   const [cardHidden, setCardHidden] = useState(true);
   const [contentHidden, setContentHidden] = useState(true);
@@ -23,6 +27,7 @@ export const NavCard: FunctionComponent<NavCardProps> = () => {
   useEffect(() => {
     setTimeout(() => {
       setCardHidden(false);
+      handleCardAction(false);
       setContentHidden(false);
     }, 1000);
   }, []);
@@ -49,8 +54,14 @@ export const NavCard: FunctionComponent<NavCardProps> = () => {
     }
   };
 
-  const showCard = () => setCardHidden(false);
-  const hideCard = () => setCardHidden(true);
+  const showCard = () => {
+    setCardHidden(false);
+    handleCardAction(false);
+  };
+  const hideCard = () => {
+    setCardHidden(true);
+    handleCardAction(true);
+  };
 
   return (
     <>
