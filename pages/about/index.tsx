@@ -61,7 +61,6 @@ const AboutPage: FunctionComponent<AboutPageProps> = () => {
       <ul>
         <li>chess</li>
         <li>biking</li>
-        <li>food & diet</li>
         <li>skiing</li>
       </ul>
     </div>
